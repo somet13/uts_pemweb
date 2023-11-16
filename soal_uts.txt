@@ -1,0 +1,23 @@
+jawaban esay uts pemograman Web
+
+1. 
+	Framework adalah sebuah alat yang membantu membuat aplikasi dengan cepat dan mudah. Framework sudah memiliki komponen-komponen yang dibutuhkan, seperti kode, fungsi, tampilan, dan lain-lain. Pengembang aplikasi hanya perlu menyesuaikan atau menambahkan beberapa bagian saja. 
+
+
+2. 
+	2.1. Aplikasi Laundry berbasis Web.
+
+	2.2  Jobdesk Anggota
+		- Fahmi Idris Anjounghan (22416255201247) (ketua, Developer).
+		- Ilham Abi Gumelar (22416255201195) (Designer UI/UX).
+		- Firmansyah Maulana (22416255201228) (Laporan, Tester).
+
+	2.3 Permasalahan ketika wawancara ke pihak yang bertanggung jawab dari Laundry tersebut ialah
+		- belum mempunyai aplikasi web ataupun aplikasi berbasis WEB
+		- pembayaran masih manual.
+		- tidak ada pemberitahuan dari proses pelaundryan pakaian customer tersebut.
+		
+		Solusi Dari Permasalahan:
+		- dibuatkannya aplikasi berbasis web.
+		- di integarsikan pembayaran melalui DANA baik secara langsung ataupun melalui aplikasi web tersebut.
+		- dibuatkan nya fitur notifikasi pada aplikasi web tersebut untuk customer mengetahui proses pakaian yang sedang di laundry.

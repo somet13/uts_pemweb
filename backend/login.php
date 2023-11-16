@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require './../config/db.php';
 
 if(isset($_POST['submit'])) {
@@ -13,6 +13,9 @@ if(isset($_POST['submit'])) {
         
         if(password_verify($password,$data['password'])) {
             echo "selamat datang ".$data['name'];
+            $_SESSION['user'] = true;
+            $_SESSION['name'] = $data['name'];
+            header('Location: ../index.php');
             die;
 
             //otorisasi

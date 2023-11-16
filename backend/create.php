@@ -19,7 +19,8 @@ if(isset($_POST['submit'])) {
     if($upload) {
         mysqli_query($db_connect,"INSERT INTO products (name,price,image)
                     VALUES ('$name','$price','/upload/$randomFilename')");
-        echo "berhasil upload";
+        echo "<script>alert('data berhasil ditambahkan');</script>";
+        header('location: ../show.php');
     } else {
         echo "gagal upload";
     }

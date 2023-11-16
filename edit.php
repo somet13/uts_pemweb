@@ -1,7 +1,7 @@
 <?php
 include('./partials/header.php');
 
-$bannerTitle = "Tambah produk";
+$bannerTitle = "Edit produk";
 include('./components/banner.php');
 
 
@@ -23,7 +23,7 @@ include('./components/banner.php');
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Masukan Gambar: jpg, png, jpeg. webp</label>
-                        <input type="file" name="image" name="image" placeholder="jpg, png, jpeg. webp" class="form-control" id="" required>
+                        <input type="file" name="image" name="price" placeholder="jpg, png, jpeg. webp" class="form-control" id="" required>
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                 </form>

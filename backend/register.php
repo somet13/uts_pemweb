@@ -29,4 +29,5 @@ if(isset($_POST['submit'])) {
                             ('$name','$email','$password','$created_at')");
 
     echo "registrasi berhasil";
+    header('Location: ../login.php');
 }
