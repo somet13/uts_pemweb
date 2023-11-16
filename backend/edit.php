@@ -4,37 +4,37 @@ require './../config/db.php';
 
 if (isset($_POST['submit'])) {
     global $db_connect;
-    
-    $id = $_POST['id_tmukd'];
+
+    $id = $_POST['id'];
     $name = htmlspecialchars($_POST['name']);
     $price = $_POST['price'];
+    $gambar_lama = $_POST['image_old'];
 
-    if ($_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
+    if ($_FILES['image']['error'] === 4) {
+        // Jika tidak ada gambar yang diupload, gunakan gambar lama
+        $gambar = $gambar_lama;
+    } else {
         $image = $_FILES['image']['name'];
         $tempImage = $_FILES['image']['tmp_name'];
 
         $randomFilename = time() . '-' . md5(rand()) . '-' . $image;
-        $uploadPath = $_SERVER['DOCUMENT_ROOT'] . '/upload/' . $randomFilename;
+        $uploadPath = '../upload/' . $randomFilename;
 
-        if (move_uploaded_file($tempImage, $uploadPath)) {
-            if ($_POST['image_old']) {
-                unlink($_SERVER['DOCUMENT_ROOT'] . '/upload/' . $_POST['image_old']);
-            }
-        } else {
-            echo "<script>alert('Error moving uploaded file. Data gagal diubah');</script>";
+        $gambar = "/upload/$randomFilename";
+
+        $upload = move_uploaded_file($tempImage, $uploadPath);
+        if (!$upload) {
+            echo "gagal upload";
+            exit; // Keluar dari skrip jika gagal upload
         }
-    } else {
-        $image = $_POST['image_old'];
     }
 
+    // Memperbarui data di database
     mysqli_query($db_connect, "UPDATE products SET
         name = '$name',
         price = '$price',
-        image = '$image'
+        image = '$gambar' 
         WHERE id = '$id'
     ");
-
-    echo "<script>alert('Data berhasil diubah');</script>";
-    header('location: ../show.php');
+    header('location: ./../show.php');
 }
-?>

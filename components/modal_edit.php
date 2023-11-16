@@ -2,7 +2,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form action="./backend/edit.php" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="id_tmukd" value="<?= $row['id'] ?>">
+				<input type="hidden" name="id" value="<?= $row['id'] ?>">
 				<input type="hidden" name="image_old" value="<?= $row["image"] ?>">
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="exampleModalLabel">Edit Produk</h1>
